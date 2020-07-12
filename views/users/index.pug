@@ -1,11 +1,19 @@
-h1 User
+html
+    head
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css")
+    body
 
-a(href="/users/create") New member
+        h1 User
 
-form(action="/users/search" method='GET')
-    input(type='text', name= "q")
-    button Search
+        a(href="/users/create") New member
 
-ul
-    each user in users
-        li= user.name
+        form(action="/users/search" method='GET')
+            input(type='text', name= "q")
+            button Search
+
+        ul
+            each user in users
+                li
+                    span= user.name 
+                    span &nbsp;
+                    a(href='/users/' + user.id) View
