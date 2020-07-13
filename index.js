@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser')
 var userRoute = require('./routes/user.route');
 var authRoute = require('./routes/auth.route');
+var productRoute = require('./routes/product.route');
 
 var authMiddleware = require('./middlewares/auth.middleware');
 
@@ -14,11 +15,12 @@ var app = express();
 app.set('view engine', 'pug');
 app.set('views', './views');
 
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(bodyParser.json()); 
+app.use(bodyParser.urlencoded({ extended: true })); 
 
 app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(express.static('public'))
+app.use('/products', productRoute);
 
 app.get('/', function(req, res) {
   res.render('index', {
