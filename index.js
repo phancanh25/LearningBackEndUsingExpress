@@ -16,8 +16,7 @@ app.set('views', './views');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-app.use(cookieParser());
-
+app.use(cookieParser('asdkaodkoas10230'));
 app.use(express.static('public'))
 
 app.get('/', function(req, res) {
@@ -34,3 +33,5 @@ app.use('/users', userRoute);
 app.listen(port, function() {
   console.log('Server listening on port ' + port);
 });
+
+console.log(process.env);

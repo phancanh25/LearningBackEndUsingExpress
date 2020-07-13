@@ -12,7 +12,7 @@ module.exports.postLogin = function(req, res) {
   var user = db.get('users').find({ email: email }).value();
 
   var hashedPassword = md5(password);
-  if (!user) {
+ if (!user) {
     res.render('auth/login', {
       errors: [
         'User does not exist.'
@@ -32,6 +32,9 @@ module.exports.postLogin = function(req, res) {
     return;
   }
 
-  res.cookie('userId', user.id);
+  res.cookie('userId', user.id, {
+    signed: true
+  });
+
   res.redirect('/users');
 };
