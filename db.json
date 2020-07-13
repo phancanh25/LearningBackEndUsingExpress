@@ -1,9 +1,16 @@
 {
   "users": [
     {
+      "name": "Canh Phan",
+      "phone": "0123",
+      "id": "D20auVoPN"
+    },
+    {
       "name": "Phan Canh",
       "phone": "0379570434",
-      "id": "zWwD79Z5O"
+      "id": "zWwD79Z5O",
+      "email": "toicanh25@gmail.com",
+      "password": "de7e91acb19e533deca86d85a05b1f47"
     }
   ]
 }
