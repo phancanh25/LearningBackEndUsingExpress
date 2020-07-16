@@ -10,7 +10,7 @@ module.exports.index = function(req, res) {
   var drop = (page - 1) * perPage;
 
   res.render('products/index', {
-    products: db.get('products').value().slice(start, end)
-    // products: db.get('products').drop(drop).take(perPage).value()
+    //products: db.get('products').value().slice(start, end)
+    products: db.get('products').drop(drop).take(perPage).value()
   });
 };
